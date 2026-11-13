@@ -1,0 +1,134 @@
+/* Weeknight Recipes. Ready to use: you don't need to change this file.
+   The pressed and open looks come from the ARIA attributes ([aria-pressed="true"], [aria-expanded="true"]),
+   so when your code sets the attribute, the look follows. */
+
+:root {
+  --cream: #fffaf2;
+  --ink: #2b2118;
+  --muted: #6b5a4a;
+  --tomato: #c8412b;
+  --basil: #2f6b3a;
+  --card: #ffffff;
+  --line: #e6dccd;
+  --focus: #1f5fbf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+header {
+  padding: 1.5rem 1rem 0.5rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--tomato);
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+main {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.35rem 0.9rem;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.filter-bar button[aria-pressed="true"] {
+  background: var(--basil);
+  border-color: var(--basil);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#recipe-count {
+  text-align: center;
+  color: var(--muted);
+}
+
+#recipe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+}
+
+.recipe-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.recipe-card h3 {
+  margin: 0;
+}
+
+.details {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.show-steps[aria-expanded="true"] {
+  border-color: var(--basil);
+  font-weight: 600;
+}
+
+.favorite .icon {
+  color: var(--muted);
+}
+
+.favorite[aria-pressed="true"] {
+  border-color: var(--tomato);
+}
+
+.favorite[aria-pressed="true"] .icon {
+  color: var(--tomato);
+}
+
+.steps {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}

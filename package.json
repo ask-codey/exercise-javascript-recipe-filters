@@ -1,0 +1,8 @@
+{
+  "name": "recipe-filters",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

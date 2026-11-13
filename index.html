@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weeknight Recipes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Weeknight Recipes</h1>
+    <p>Good food on the table in 30 minutes or less.</p>
+  </header>
+
+  <main>
+    <!-- The filter buttons. data-meal says which recipes each one shows; aria-pressed says which one is chosen. -->
+    <div class="filter-bar" role="group" aria-label="Show recipes for">
+      <button type="button" data-meal="all" aria-pressed="true">All</button>
+      <button type="button" data-meal="breakfast" aria-pressed="false">Breakfast</button>
+      <button type="button" data-meal="lunch" aria-pressed="false">Lunch</button>
+      <button type="button" data-meal="dinner" aria-pressed="false">Dinner</button>
+      <button type="button" data-meal="favorites" aria-pressed="false">♥ Favorites</button>
+    </div>
+
+    <p id="recipe-count" aria-live="polite">Showing 2 recipes</p>
+
+    <!-- Your render function replaces these two cards with one card per recipe in recipe-data.js.
+         They're here so you can see what a card looks like before your code runs. -->
+    <ul id="recipe-list">
+      <li class="recipe-card" data-id="overnight-oats">
+        <h3>Overnight Oats</h3>
+        <p class="details">5 min · breakfast</p>
+        <div class="actions">
+          <button type="button" class="show-steps" aria-expanded="false">Show steps</button>
+          <button type="button" class="favorite" aria-pressed="false"><span class="icon" aria-hidden="true">♡</span> Favorite</button>
+        </div>
+        <ol class="steps" hidden>
+          <li>Stir oats, milk and a spoonful of honey together in a jar.</li>
+          <li>Close the jar and leave it in the fridge overnight.</li>
+          <li>Top with berries in the morning.</li>
+        </ol>
+      </li>
+      <li class="recipe-card" data-id="sheet-pan-fajitas">
+        <h3>Sheet-Pan Fajitas</h3>
+        <p class="details">30 min · dinner</p>
+        <div class="actions">
+          <button type="button" class="show-steps" aria-expanded="false">Show steps</button>
+          <button type="button" class="favorite" aria-pressed="true"><span class="icon" aria-hidden="true">♥</span> Favorite</button>
+        </div>
+        <ol class="steps" hidden>
+          <li>Slice two peppers, an onion and two chicken breasts.</li>
+          <li>Toss them with oil and fajita spice on a sheet pan.</li>
+          <li>Roast at 425°F for 20 minutes.</li>
+          <li>Fill warm tortillas and add salsa.</li>
+        </ol>
+      </li>
+    </ul>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
